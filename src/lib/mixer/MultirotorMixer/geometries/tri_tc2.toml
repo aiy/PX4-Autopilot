@@ -1,0 +1,25 @@
+# Tri TC2
+
+[info]
+key = "3tc2"
+description = "Tri TC2"
+
+[rotor_default]
+axis      = [0.0, 0.0, -1.0]
+Ct        = 1.0
+Cm        = 0.0
+
+[[rotors]]
+name      = "front_right"
+position  = [0.5, 0.866025, 0.0]
+direction = "CW"
+
+[[rotors]]
+name      = "front_left"
+position  = [0.5, -0.866025, 0.0]
+direction = "CCW"
+
+[[rotors]]
+name      = "rear"
+position  = [-1.0, 0.0, 0.0]
+direction = "CCW"

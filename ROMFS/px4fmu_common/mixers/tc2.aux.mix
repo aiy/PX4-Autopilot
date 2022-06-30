@@ -1,0 +1,11 @@
+# TC-2 AUX Mixer
+
+# @board px4_fmu-v2 exclude
+# @output AUX1 Motor right
+# @output AUX2 Motor left
+# @output AUX3 Motor tail
+
+# Motors
+R: 3tc2
+
+
