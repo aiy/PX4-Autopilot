@@ -296,7 +296,7 @@ PARAM_DEFINE_INT32(COM_LOW_BAT_ACT, 0);
  * @max 25.0
  * @decimal 3
  */
-PARAM_DEFINE_FLOAT(COM_BAT_ACT_T, 10.0f);
+PARAM_DEFINE_FLOAT(COM_BAT_ACT_T, 5.f);
 
 /**
  * Imbalanced propeller failsafe mode
@@ -927,7 +927,7 @@ PARAM_DEFINE_INT32(COM_PREARM_MODE, 0);
 /**
  * Enable force safety
  *
- * Force safety when the vehicle disarms. Not supported when safety button used over PX4IO board.
+ * Force safety when the vehicle disarms
  *
  * @boolean
  * @group Commander
@@ -1022,6 +1022,22 @@ PARAM_DEFINE_INT32(COM_ARM_ARSP_EN, 1);
  * @value 2 Enforce SD card presence
  */
 PARAM_DEFINE_INT32(COM_ARM_SDCARD, 1);
+
+/**
+ * Enforced delay between arming and further navigation
+ *
+ * The minimal time from arming the motors until moving the vehicle is possible is COM_SPOOLUP_TIME seconds.
+ * Goal:
+ * - Motors and propellers spool up to idle speed before getting commanded to spin faster
+ * - Timeout for ESCs and smart batteries to successfulyy do failure checks
+ *   e.g. for stuck rotors before the vehicle is off the ground
+ *
+ * @group Commander
+ * @min 0
+ * @max 5
+ * @unit s
+ */
+PARAM_DEFINE_FLOAT(COM_SPOOLUP_TIME, 1.0f);
 
 /**
  * Wind speed warning threshold
